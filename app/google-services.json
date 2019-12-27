@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "202862886968",
+    "firebase_url": "https://lux-home-d9f82.firebaseio.com",
+    "project_id": "lux-home-d9f82",
+    "storage_bucket": "lux-home-d9f82.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:202862886968:android:9961c7de89879a56cde6cd",
+        "android_client_info": {
+          "package_name": "araikovich.inc.sales.luxhome"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "202862886968-qn5vismvf6bf4s3ro902cve741c9172l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD1I6gBai0iLAHl3-GqtAVI10YZMnNNX4A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "202862886968-qn5vismvf6bf4s3ro902cve741c9172l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

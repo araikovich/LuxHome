@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/storeItemsFragment">
+    <fragment
+        android:id="@+id/storeItemsFragment"
+        android:name="araikovich.inc.sales.luxhome.ui.items.StoreItemsFragment"
+        android:label="StoreItemsFragment" >
+        <action
+            android:id="@+id/action_storeItemsFragment_to_storeItemDetailFragment2"
+            app:destination="@+id/storeItemDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/storeItemDetailFragment"
+        android:name="araikovich.inc.sales.luxhome.StoreItemDetailFragment"
+        android:label="StoreItemDetailFragment" />
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="araikovich.inc.sales.luxhome.ui.BasketFragment"
+        android:label="BasketFragment" >
+        <action
+            android:id="@+id/action_basketFragment_to_storeItemDetailFragment2"
+            app:destination="@id/storeItemDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookmarksFragment"
+        android:name="araikovich.inc.sales.luxhome.BookmarksFragment"
+        android:label="BookmarksFragment" >
+        <action
+            android:id="@+id/action_bookmarksFragment_to_storeItemDetailFragment2"
+            app:destination="@id/storeItemDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="araikovich.inc.sales.luxhome.ProfileFragment"
+        android:label="ProfileFragment" />
+</navigation>
