@@ -8,25 +8,34 @@ import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import araikovich.inc.sales.luxhome.R
-import araikovich.inc.sales.luxhome.data.ItemModel
+import araikovich.inc.sales.luxhome.data.model.ItemModel
 import araikovich.inc.sales.luxhome.databinding.CellStoreItemBinding
 import araikovich.inc.sales.luxhome.ui.util.DiffDefaultCallback
-import araikovich.inc.sales.luxhome.ui.util.color
 
 class StoreItemsAdapter(
-    private val context: Context
+    private val context: Context,
+    private val onClick: (ItemModel) -> Unit,
+    private val onBookmarkClick: (ItemModel) -> Unit
 ) : RecyclerView.Adapter<StoreItemsAdapter.ItemViewHolder>() {
 
     private val items: MutableList<ItemModel> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
-        return ItemViewHolder(LayoutInflater.from(context).inflate(R.layout.cell_store_item, parent, false))
+        return ItemViewHolder(
+            LayoutInflater.from(context).inflate(
+                R.layout.cell_store_item,
+                parent,
+                false
+            )
+        )
     }
 
     override fun getItemCount() = items.size
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        holder.setBackgroundColor()
+        holder.itemModel = items[position]
+        holder.setBookmarkedImage(items[position].isBookmarked)
+        holder.setLiseteners(onClick = onClick, onBookmarkClick = onBookmarkClick)
     }
 
     fun updateItems(newList: List<ItemModel>) {
@@ -38,9 +47,30 @@ class StoreItemsAdapter(
 
     class ItemViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val binding = DataBindingUtil.bind<CellStoreItemBinding>(view)!!
+        lateinit var itemModel: ItemModel
 
-        fun setBackgroundColor() {
-            binding.parentContainer.setBackgroundColor(binding.root.context.color(R.color.main_menu_item_color))
+        fun setLiseteners(
+            onClick: (ItemModel) -> Unit,
+            onBookmarkClick: (ItemModel) -> Unit
+        ) {
+            binding.parentCard.setOnClickListener {
+                onClick.invoke(itemModel)
+            }
+            binding.ivBookmark.setOnClickListener {
+                itemModel.isBookmarked = !itemModel.isBookmarked
+                setBookmarkedImage(itemModel.isBookmarked)
+                onBookmarkClick.invoke(itemModel)
+            }
+        }
+
+        fun setBookmarkedImage(isBookmarked: Boolean) {
+            binding.ivBookmark.setImageResource(
+                if (isBookmarked) {
+                    R.drawable.ic_bookmarks
+                } else {
+                    R.drawable.ic_bookmarks_not_selected
+                }
+            )
         }
     }
 }

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/storeItemsFragment">
     <fragment
@@ -16,11 +15,11 @@
     </fragment>
     <fragment
         android:id="@+id/storeItemDetailFragment"
-        android:name="araikovich.inc.sales.luxhome.StoreItemDetailFragment"
+        android:name="araikovich.inc.sales.luxhome.ui.item_detail.StoreItemDetailFragment"
         android:label="StoreItemDetailFragment" />
     <fragment
         android:id="@+id/basketFragment"
-        android:name="araikovich.inc.sales.luxhome.ui.BasketFragment"
+        android:name="araikovich.inc.sales.luxhome.ui.basket.BasketFragment"
         android:label="BasketFragment" >
         <action
             android:id="@+id/action_basketFragment_to_storeItemDetailFragment2"
@@ -30,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/bookmarksFragment"
-        android:name="araikovich.inc.sales.luxhome.BookmarksFragment"
+        android:name="araikovich.inc.sales.luxhome.ui.bookmarks.BookmarksFragment"
         android:label="BookmarksFragment" >
         <action
             android:id="@+id/action_bookmarksFragment_to_storeItemDetailFragment2"
@@ -40,6 +39,6 @@
     </fragment>
     <fragment
         android:id="@+id/profileFragment"
-        android:name="araikovich.inc.sales.luxhome.ProfileFragment"
+        android:name="araikovich.inc.sales.luxhome.ui.profile.ProfileFragment"
         android:label="ProfileFragment" />
 </navigation>

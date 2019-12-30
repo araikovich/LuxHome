@@ -1,10 +1,11 @@
-package araikovich.inc.sales.luxhome
+package araikovich.inc.sales.luxhome.ui.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import araikovich.inc.sales.luxhome.R
 
 class ProfileFragment : Fragment() {
 

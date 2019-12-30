@@ -1,6 +1,6 @@
-package araikovich.inc.sales.luxhome.data
+package araikovich.inc.sales.luxhome.data.response
 
-data class ItemModel(
+class ItemResponse(
     val id: Int,
     val title: String,
     val price: Int,

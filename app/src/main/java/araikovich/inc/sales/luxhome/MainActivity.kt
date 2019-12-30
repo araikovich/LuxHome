@@ -7,6 +7,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.ui.setupWithNavController
 import araikovich.inc.sales.luxhome.databinding.ActivityMainBinding
+import araikovich.inc.sales.luxhome.ui.util.color
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,5 +19,10 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         navHost = Navigation.findNavController(this, R.id.nav_host)
         binding.bottomNavigation.setupWithNavController(navHost)
+        window.statusBarColor = color(R.color.white)
+    }
+
+    fun toDetailFragment(id: Int) {
+        navHost.navigate(R.id.storeItemDetailFragment)
     }
 }

@@ -1,4 +1,4 @@
-package araikovich.inc.sales.luxhome.data
+package araikovich.inc.sales.luxhome.data.entity
 
 import androidx.room.Entity
 

@@ -1,7 +1,6 @@
 package araikovich.inc.sales.luxhome.domain.repository
 
-import androidx.lifecycle.LiveData
-import araikovich.inc.sales.luxhome.data.ItemModel
+import araikovich.inc.sales.luxhome.data.model.ItemModel
 
 interface ItemsRepository {
 
